@@ -1,0 +1,2 @@
+-i ${RTL_DIR}
+${RTL_DIR}/OV7670_CTRL/SCCB_MST.v
