@@ -8,6 +8,7 @@
  *                  Supports Single slave device only
  * History:              
  *          2021.07.11 - Initial release
+ *          2021.07.11 - Removed r_busy
  */
 
 module SCCB_MST
@@ -33,7 +34,6 @@ module SCCB_MST
 
     reg  [ 5:0] r_phase_bit_cnt;
     reg  [31:0] r_data;
-    reg         r_busy;
     reg         r_scl;
     reg         r_sda;
     reg         r_sio_d_oe_m_n;

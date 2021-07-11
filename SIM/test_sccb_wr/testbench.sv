@@ -67,13 +67,14 @@ module testbench;
             r_start    = 1;
             r_intr_clr = 0;
 
-            repeat(100) @(posedge r_clk);
-            if(w_wait_intr_clr == 1);
-            repeat(3) @(posedge r_clk);
-            #1;
-            r_intr_clr = 1;
-            r_start    = 0;
-            
+            repeat(100) @(posedge r_clk); #1;
+
+            if(w_wait_intr_clr == 1) begin
+                repeat(3) @(posedge r_clk);
+                #1;
+                r_intr_clr = 1;
+                r_start    = 0;
+            end
         end
 
         $finish();
