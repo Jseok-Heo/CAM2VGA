@@ -44,6 +44,7 @@ module testbench;
             @(posedge r_clk_a); #1;
             r_data = $urandom();
             repeat(STAGE) @(posedge r_clk_b); #1;
+            $display("[DEBUG] *I, input data = %x, expected data = %x", r_data, w_data);
             if(w_data != r_data) begin
                 $display("%c[1;31m",27);
                 $display("=========================================================");
